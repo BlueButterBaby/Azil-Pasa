@@ -1,0 +1,83 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Oxygen', sans-serif;
+}
+a {
+  text-decoration: none !important;
+}
+.bk-lightBlue {
+  color: #0098D6 !important;
+}
+.bk-darkBlue {
+  color: #0074A3 !important;
+}
+.bk-bgdarkBlue {
+  background-color: #0074A3 !important;
+}
+.bk-bglightBlue {
+  background-color: #0098D6 !important;
+}
+.bk-bgdarkerBlue {
+  background-color: #004f6f !important;
+}
+header a img {
+  width: 80%;
+}
+.bk-w-90 {
+  width: 90%;
+}
+.active,
+#navbarNav ul li a:hover {
+  color: #0074A3 !important;
+}
+.carousel-inner .carousel-caption {
+  right: 55%;
+  left: 15%;
+  bottom: 30rem;
+  border-radius: 10px;
+}
+.bk-coverblok {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.bk-naslov h3 {
+  color: #0074A3;
+  font-size: 32px;
+  font-weight: bold;
+}
+#o-nama img,
+#misija img {
+  box-shadow: 5px 5px 10px #000;
+  border-radius: 5%;
+}
+#porodica h4 {
+  font-size: 25px;
+}
+#porodica h5 {
+  font-size: 18px;
+}
+footer {
+  background-color: #004f6f;
+}
+#footermenu a:hover {
+  color: #0098D6 !important;
+}
+#footermenu a {
+  font-size: 22px;
+}
+#footersocial a:hover {
+  color: #0098D6 !important;
+}
+#footersocial a {
+  font-size: 24px;
+}
+#bk-wl {
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+}
+#bk-bl {
+  width: 100%;
+  height: 50px;
+  background-color: #004f6f;
+}
