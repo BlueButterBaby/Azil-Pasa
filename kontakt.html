@@ -27,8 +27,8 @@
 </head>
 <body>
     <!-- Header -->
-    <header class = "bk-w-90 mx-auto">
-        <div class="container-fluid">
+    <header>
+        <div class="bk-w-90 mx-auto">
             <div class="row">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
@@ -65,6 +65,94 @@
             </div>
         </div>
     </header>
+    <div id = "bk-bl"></div>
+
+    <main>
+        <div class = "bk-w-90 mx-auto py-5">
+            <div class="row">
+              <div class="col-12 mx-auto text-center bk-naslov">
+                <h3>Kontaktirajte nas</h3>
+              </div>
+            </div>
+        </div>
+        <div class = "bk-w-90 mx-auto py-5">
+            <div class = "row">
+                <div class="col-12">
+                    <section id = "forma">
+                        <div class="bk-w-90 mx-auto">
+                            <form method = "GET" action = "Poruke.php">
+                                <div class="row d-flex justify-content-center">
+                                    <div class = "col-5">                            
+                                        <div class = "mb-4">
+                                            <input type = "text" class = "form-control" name = "bkIme" id = "bkIme" placeholder = "Ime"/>
+                                        </div>                        
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="mb-4">
+                                            <input type = "text" class = "form-control" name = "bkPrezime" id = "bkPrezime" placeholder = "Prezime"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-5">
+                                        <div class="mb-4">
+                                            <input type = "email" class = "form-control" name = "bkEmail" id = "bkEmail" placeholder = "Email" required = "required"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="mb-4">
+                                            <input type = "tel" class = "form-control" name = "bkBrojtel" id = "bkBrojtel" placeholder = "Broj telefona"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "row d-flex justify-content-center">
+                                    <div class="col-10">
+                                        <div class="mb-4">
+                                            <textarea class = "form-control" placeholder = "Vaša poruka" id = "bkTextarea" rows = "4"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="mb-5">
+                                        <button type = "submit" class = "btn bk-bgdarkBlue text-white">Pošalji</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                    <section id = "info">
+                        <table class = "table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td class = "fs-4"><i class="fa-regular fa-envelope p-2 bk-darkBlue"></i>Email:</td>
+                                    <td class = "fs-4"><a href = "mailto:azilpasa@gmail.com" class = "bk-lightBlue">azilpasa&#64;gmail&#46;com</a></td>
+                                </tr>
+                                <tr>
+                                    <td class = "fs-4"><i class="fa-solid fa-phone p-2 bk-darkBlue"></i>Broj telefona:</td>           
+                                    <td class = "fs-4"><a href = "tel:+381234567890" class = "bk-lightBlue">+381 234 567 890</a></td>
+                                </tr>
+                                <tr>
+                                    <td class = "fs-4"><i class="fa-solid fa-location-dot p-2 bk-darkBlue"></i>Adresa:</td>
+                                    <td class = "fs-4">Ulica Avalski put, Beograd</td>
+                                </tr>
+                                <tr>
+                                    <td class = "fs-4"><i class="fa-solid fa-fax p-2 bk-darkBlue"></i>Fax:</td>
+                                    <td class = "fs-4"><a href = "tel:+381234567890" class = "bk-lightBlue">+(381) 234 567 890</a></td>
+                                </tr>
+                                <tr>
+                                    <td class = "fs-4"><i class="fa-solid fa-building-columns p-2 bk-darkBlue"></i>Broj Računa:</td>
+                                    <td class = "fs-4">1234-5678-9012-3456</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="bk-w-90 mx-auto py-3">

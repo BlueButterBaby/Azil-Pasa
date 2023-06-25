@@ -46,9 +46,12 @@ header a img {
   font-weight: bold;
 }
 #o-nama img,
-#misija img {
+#misija img,
+#volontiranje img,
+#donacije img,
+#autor img {
   box-shadow: 5px 5px 10px #000;
-  border-radius: 5%;
+  border-radius: 3%;
 }
 #porodica h4 {
   font-size: 25px;
