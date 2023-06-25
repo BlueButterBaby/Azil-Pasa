@@ -10,6 +10,7 @@
 
     <!-- Moj CSS -->
     <link href = "assets/css/style.css" rel = "stylesheet"/>
+    <link href = "assets/css/responsive.css" rel = "stylesheet"/>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"/>
@@ -44,13 +45,10 @@
                       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                           <li class="nav-item">
-                            <a class="nav-link text-end fw-bold fs-4 bk-lightBlue" href="index.html">Početna</a>
+                            <a class="nav-link active text-end fw-bold fs-4" aria-current="page" href="index.html">Početna</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link active text-end fw-bold fs-4" aria-current="page" href="pomoc.html">Kako pomoći</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link text-end fw-bold fs-4 bk-lightBlue" href="aktuelnosti.html">Aktuelnosti</a>
+                            <a class="nav-link text-end fw-bold fs-4 bk-lightBlue" href="pomoc.html">Kako pomoći</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link text-end fw-bold fs-4 bk-lightBlue" href = "kontakt.html">Kontakt</a>
@@ -69,7 +67,7 @@
 
     <main>
         <!-- Udomljavljanje -->
-        <section id = "udomljavljanje">
+        <section id = "udomljavanje">
             <div class = "bk-w-90 mx-auto py-5 ">
               <div class="row">
                 <div class="col-12 mx-auto text-center bk-naslov">
@@ -78,10 +76,10 @@
               </div>
               <div class="row">
                 <div class="col-12 mt-4">
-                    <p class = "fs-4"><span class = "fs-1 bk-darkBlue">U</span>domljavanje psa je izuzetno ispunjavajući čin koji donosi radost i sreću kako vama, tako i psiću koji pronalazi svoj novi dom. Udomljavanje psa ne samo da vam omogućava vernog i ljubaznog prijatelja, već ima i mnoge druge prednosti. Kada udomite psa, pružate mu drugu šansu za sreću. Pomažete mu da napusti azil ili neželjene uslove i da pronađe ljubav i sigurnost u vašem domu. Kroz udomljavanje, stvarate poseban vez sa psom, razvijate međusobno poverenje i zajedničke uspomene. Udomljavanje psa takođe ima pozitivan uticaj na vaš život. Psi donose radost, ljubav i veselje u vaš dom. Oni su izvor beskrajne naklonosti i vernosti. Uz psa, imate stalnog saputnika za šetnje, igre i trenutke opuštanja. Psi su odlični terapeuti za smanjenje stresa, poboljšanje mentalnog zdravlja i podizanje raspoloženja. Pogledajte neke od nasih mnogobrojnih rasa:</p>
+                    <p class = "fs-4"><span class = "fs-1 bk-darkBlue d-inline">U</span>domljavanje psa je izuzetno ispunjavajući čin koji donosi radost i sreću kako vama, tako i psiću koji pronalazi svoj novi dom. Udomljavanje psa ne samo da vam omogućava vernog i ljubaznog prijatelja, već ima i mnoge druge prednosti. Kada udomite psa, pružate mu drugu šansu za sreću. Pomažete mu da napusti azil ili neželjene uslove i da pronađe ljubav i sigurnost u vašem domu. Kroz udomljavanje, stvarate poseban vez sa psom, razvijate međusobno poverenje i zajedničke uspomene.<span>Udomljavanje psa takođe ima pozitivan uticaj na vaš život. Psi donose radost, ljubav i veselje u vaš dom. Oni su izvor beskrajne naklonosti i vernosti. Uz psa, imate stalnog saputnika za šetnje, igre i trenutke opuštanja. Psi su odlični terapeuti za smanjenje stresa, poboljšanje mentalnog zdravlja i podizanje raspoloženja.</span> Pogledajte neke od nasih mnogobrojnih rasa:</p>
                 </div>
                 <div class = "row mt-4">
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex justify-content-center">
                         <div class="card" style="width: 24rem;">
                           <img src="assets/img/labrador.jpg" class="card-img-top" alt="Labrador Retriver"/>
                           <div class="card-body text-center">
@@ -115,7 +113,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex justify-content-center">
                         <div class="card" style="width: 24rem;">
                           <img src="assets/img/mesanac.jpg" class="card-img-top" alt="Mesanac"/>
                           <div class="card-body text-center">
@@ -150,7 +148,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex justify-content-center">
                         <div class="card" style="width: 24rem;">
                           <img src="assets/img/pomeranac.jpg" class="card-img-top" alt="Pomeranac"/>
                           <div class="card-body text-center">
@@ -185,7 +183,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3 d-flex justify-content-center">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex justify-content-center">
                         <div class="card" style="width: 24rem;">
                           <img src="assets/img/buldog.jpg" class="card-img-top" alt="Buldog"/>
                           <div class="card-body text-center">
@@ -233,15 +231,15 @@
                 </div>
               </div>
               <div class = "row mt-4 d-flex align-items-center">
-                    <div class="col-7">
-                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span>olontiranje u azilu za pse je iskustvo koje menja živote - kako pasa, tako i volontera. To je prilika da pružite ljubav, negu i podršku napuštenim psima i da im pomognete da pronađu srećan dom.</p>
-                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">K</span>ao volonter u azilu za pse, možete biti ključna karika u njihovom putovanju ka novom početku. Možete provoditi vreme s njima, igrati se, šetati ih i pružiti im neophodnu pažnju i ljubav koju zaslužuju. Vaša prisutnost i briga pomažu im da se osećaju voljeno i da zadrže nadu dok čekaju svoju šansu za udomljavanje.</p>
-                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span>olontiranje Vam pruža vam priliku da naučite o psećoj prirodi, njihovim potrebama i načinima kako im pomoći. Takođe, možete upoznati druge strastvene ljubitelje pasa i deliti iskustva, ideje i savete.</p>
-                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span>aša predanost i angažman kao volonter imaju ogroman uticaj na živote ovih pasa. Pomažete im da se osećaju sigurno, voljeno i da ponovno veruju u ljude. Vaša pomoć u promociji pasa za udomljavanje takođe je ključna, jer pomognete da se stvori svest o njihovoj prisutnosti i potrebi za domom.</p>
-                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span>olontiranje u azilu za pse je nezaboravno iskustvo ispunjeno ljubavlju, srećom i zahvalnošću. Svaki pas kojeg ste pomogli imaće zauvek zahvalnost prema vama. Vaša posvećenost ovim divnim stvorenjima ostavlja trag i čini svet boljim mestom za njih.</p>
-                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">U</span>zmite inicijativu i postanite volonter u azilu za pse. Vaša ljubav i briga mogu promeniti život ne samo njima, već i vama.</p>
+                    <div class="col-12 col-sm-7">
+                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue d-inline">V</span>olontiranje u azilu za pse je iskustvo koje menja živote - kako pasa, tako i volontera. To je prilika da pružite ljubav, negu i podršku napuštenim psima i da im pomognete da pronađu srećan dom.</p>
+                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue d-inline">K</span>ao volonter u azilu za pse, možete biti ključna karika u njihovom putovanju ka novom početku. Možete provoditi vreme s njima, igrati se, šetati ih i pružiti im neophodnu pažnju i ljubav koju zaslužuju. Vaša prisutnost i briga pomažu im da se osećaju voljeno i da zadrže nadu dok čekaju svoju šansu za udomljavanje.</p>
+                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue d-inline">V</span>olontiranje Vam pruža vam priliku da naučite o psećoj prirodi, njihovim potrebama i načinima kako im pomoći. Takođe, možete upoznati druge strastvene ljubitelje pasa i deliti iskustva, ideje i savete.</p>
+                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span><span>aša predanost i angažman kao volonter imaju ogroman uticaj na živote ovih pasa. Pomažete im da se osećaju sigurno, voljeno i da ponovno veruju u ljude. Vaša pomoć u promociji pasa za udomljavanje takođe je ključna, jer pomognete da se stvori svest o njihovoj prisutnosti i potrebi za domom.</span></p>
+                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span><span>olontiranje u azilu za pse je nezaboravno iskustvo ispunjeno ljubavlju, srećom i zahvalnošću. Svaki pas kojeg ste pomogli imaće zauvek zahvalnost prema vama. Vaša posvećenost ovim divnim stvorenjima ostavlja trag i čini svet boljim mestom za njih.</span></p>
+                        <p class = "fs-4"><span class = "fs-1 bk-darkBlue">U</span><span>zmite inicijativu i postanite volonter u azilu za pse. Vaša ljubav i briga mogu promeniti život ne samo njima, već i vama.</span></p>
                     </div>
-                    <div class="col-5">
+                    <div class="col-10 col-sm-5">
                         <img src = "assets/img/volonteri.jpg" alt = "Volonteri" class = "w-100"/>
                     </div>
                 </div>
@@ -257,13 +255,13 @@
                   <h3>Donacije</h3>
                 </div>
               </div>
-              <div class="row d-flex justify-content-between mt-4">
-                <div class="col-5">
+              <div class="row d-flex justify-content-between mt-4 align-items-center">
+                <div class="col-10 col-sm-5">
                     <img src = "assets/img/pas-igranje-1.jpg" alt = "Prva slika psa koji se igra" class = "w-100"/>
                 </div>
-                <div class="col-6">
-                    <p class = "fs-4"><span class = "fs-1 bk-darkBlue">D</span>oniranje azilu za pse je prilika da pružite podršku i pomoć napuštenim psima koji su u potrazi za ljubavlju i sigurnim domom. Vaša donacija ima moć da promeni njihove živote i da im pruži bolju budućnost. Kada donirate azilu za pse, pomažete u obezbeđivanju osnovnih potreba pasa kao što su hrana, smeštaj, veterinarska nega i medicinska pomoć. Vaš doprinos omogućava azilu da funkcioniše i pruži podršku što većem broju pasa koji su se našli u teškim okolnostima. </p>
-                    <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span>aša donacija može biti ključna za njihovo preživljavanje i pronalaženje novog doma. Vaša podrška pomaže u stvaranju boljeg sveta za napuštene pse i otvara put ka njihovoj sreći i novom početku. Vaša dobrotvorna gesta ima moć da menja živote pasa i da vam donese zadovoljstvo i radost znajući da ste pomogli onima kojima je to najpotrebnije. </p>
+                <div class="col-12 col-sm-6">
+                    <p class = "fs-4"><span class = "fs-1 bk-darkBlue d-inline">D</span>oniranje azilu za pse je prilika da pružite podršku i pomoć napuštenim psima koji su u potrazi za ljubavlju i sigurnim domom. Vaša donacija ima moć da promeni njihove živote i da im pruži bolju budućnost. Kada donirate azilu za pse, pomažete u obezbeđivanju osnovnih potreba pasa kao što su hrana, smeštaj, veterinarska nega i medicinska pomoć. Vaš doprinos omogućava azilu da funkcioniše i pruži podršku što većem broju pasa koji su se našli u teškim okolnostima. </p>
+                    <p class = "fs-4"><span class = "fs-1 bk-darkBlue">V</span><span>aša donacija može biti ključna za njihovo preživljavanje i pronalaženje novog doma. Vaša podrška pomaže u stvaranju boljeg sveta za napuštene pse i otvara put ka njihovoj sreći i novom početku. Vaša dobrotvorna gesta ima moć da menja živote pasa i da vam donese zadovoljstvo i radost znajući da ste pomogli onima kojima je to najpotrebnije. </span></p>
                 </div>
               </div>
             </div>
@@ -274,8 +272,8 @@
     <footer>
         <div class="bk-w-90 mx-auto py-3">
           <div class="row">
-            <div class="col-6">
-              <nav class="nav justify-content-start" id = "footersocial">
+            <div class="col-12 col-xl-3 d-flex justify-content-center">
+              <nav class="nav" id = "footersocial">
                 <a class="nav-link text-white" href="https://www.instagram.com" target = "_blank">
                   <i class="fa-brands fa-instagram"></i>
                 </a>
@@ -285,16 +283,15 @@
                 <a class="nav-link text-white" href="https://www.youtube.com" target = "_blank">
                   <i class="fa-brands fa-youtube"></i>
                 </a>
-                <a class="nav-link text-white" href="https://www.twitter.com" target = "_blank">
-                  <i class="fa-brands fa-twitter"></i>
+                <a class="nav-link text-white" href="assets/css/style.css" target = "_blank">
+                  <i class="fa-brands fa-css3-alt"></i>
                 </a>
               </nav>
             </div>
-            <div class="col-6">
-              <nav class="nav justify-content-end" id = "footermenu">
+            <div class="col-12 col-xl-9 d-flex justify-content-end">
+              <nav class="nav" id = "footermenu">
                 <a class="nav-link text-white" href="index.html">Početna</a>
                 <a class="nav-link text-white" href="pomoc.html">Kako pomoći</a>
-                <a class="nav-link text-white" href="aktuelnosti.html">Aktuelnosti</a>
                 <a class="nav-link text-white" href="kontakt.html">Kontakt</a>
                 <a class="nav-link text-white" href="o-autoru.html">O Autoru</a>
               </nav>
