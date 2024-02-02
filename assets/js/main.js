@@ -1,10 +1,10 @@
 // Sta ces sve uraditi sa javascriptom za sajt:
 
 //Navigacioni meni ispisati dinamicki - DONE
-//Sa tajmerom menjati cover slike
+//Sa tajmerom menjati cover slike - DONE
 //Blok nasa porodica ispisati dinamicki - DONE
-//Blok udomljavanje ispisati dinamicki (PROBAJ ONCLICK DOGADJAJ DA DODAS)- 
-//DDL ispisati dinamicki u formi
+//Blok udomljavanje ispisati dinamicki - DONE
+//DDL ispisati dinamicki u formi - DONE
 //Odraditi Regexe za formu
 //jQuery moras da uradis za nesto, nzm za sta iskreno
 
@@ -140,10 +140,78 @@ let udomljavanjeBlokovi = [
         body:{
             naslov: "Labrador Retriver",
             tekst: "Labradorski retriveri su izuzetno popularne rase pasa za udomljavanje iz mnogo razloga. Takođe je prilika da imate odanog, veselog i svestranog ljubimca koji će vam doneti puno radosti i ljubavi u život.",
-            //modalTarget: modal1,
+            modal: "modal1",
+            modalLabel: "modalLabel1",
+            prednosti: `<p>
+                            - Prijateljska i privržena priroda<br/>
+                            - Odlični sa decom<br/>
+                            - Lako obučavanje<br/>
+                            - Aktivni saputnici<br/>
+                            - Svestrani psi<br/>
+                        </p>`
+        }
+    },
+    {
+        img:{
+            src: "assets/img/mesanac.jpg",
+            alt: "Mešanac"
+            
+        },
+        body:{
+            naslov: "Mešanac",
+            tekst: "Udomljavanje mešanca je prilika da dobijete jedinstvenog i posebnog psa koji će vam doneti mnogo radosti i ljubavi. Bilo da je mešanac malih ili velikih rasa, njegova jedinstvena ličnost i karakter će vas osvojiti i napraviti od njega posebnog člana Vaše porodice.",
+            modal: "modal2",
+            modalLabel: "modalLabel2",
+            prednosti: `<p>
+                            - Unikatan izgled<br/>
+                            - Zdravstvene prednosti<br/>
+                            - Unikatna ličnost<br/>
+                            - Prilagodljivost<br/>
+                            - Društvo koje spašava<br/>
+                        </p>`
+        }
+    },
+    {
+        img:{
+            src: "assets/img/pomeranac.jpg",
+            alt: "Pomeranac"
+            
+        },
+        body:{
+            naslov: "Pomeranac",
+            tekst: "Udomljavanje pomeranca je prilika da dobijete malog, privrženog i ljubaznog ljubimca koji će vam doneti mnogo radosti i ljubavi. Njihova vesela priroda i ljupki izgled čine ih popularnim izborom za mnoge ljude koji traže živahne i ljubazne pse koji će im biti verni saputnici.",
+            modal: "modal3",
+            modalLabel: "modalLabel3",
+            prednosti: `<p>
+                            - Mala veličina<br/>
+                            - Prijateljska priroda<br/>
+                            - Pogodni za porodice<br/>
+                            - Prilagodljivost<br/>
+                            - Lako održavanje<br/>
+                        </p>`
+        }
+    },
+    {
+        img:{
+            src: "assets/img/buldog.jpg",
+            alt: "Buldog"
+            
+        },
+        body:{
+            naslov: "Buldog",
+            tekst: "Udomljavanje buldoga je prilika da dobijete ljubaznog, vernog i unikatnog ljubimca koji će vam doneti mnogo radosti i ljubavi. Njihova mirna priroda i karakterističan izgled čine ih popularnim izborom za mnoge ljude koji traže nežnog i privrženog psa koji će im biti odan.",
+            modal: "modal4",
+            modalLabel: "modalLabel4",
+            prednosti: `<p>
+                            - Ljubazna i privržena priroda<br/>
+                            - Odlični saputnici za porodice<br/>
+                            - Niski nivo aktivnosti<br/>
+                            - Prilagodljivost<br/>
+                            - Karakterističan izgled<br/>
+                        </p>`
         }
     }
-]
+];
 
 function napraviUdomljavanjeBlok(udomljavanjeBlok){
     let html = `<div class="col-xl-3 col-sm-6 col-12 d-flex justify-content-center">
@@ -152,32 +220,26 @@ function napraviUdomljavanjeBlok(udomljavanjeBlok){
                         <div class="card-body text-center">
                             <h4 class="card-title bk-darkBlue fw-bold">${udomljavanjeBlok.body.naslov}</h4>
                             <p class="card-text">${udomljavanjeBlok.body.tekst}</p>
-                            <button type = "button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${modalTarget}">Vidi još</button>
+                            <button type = "button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#${udomljavanjeBlok.body.modal}">Vidi još</button>
                         </div>
                     </div>
-
-                    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+                    <div class="modal fade" id=${udomljavanjeBlok.body.modal} tabindex="-1" aria-labelledby="${udomljavanjeBlok.body.modalLabel}" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="modalLabel1">Želite li da udomite ovu rasu?</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <h1 class="modal-title fs-5" id="${udomljavanjeBlok.body.modalLabel}">Želite li da udomite ovu rasu?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                <p>- Prijateljska i privržena priroda<br/>
-                                    - Odlični sa decom<br/>
-                                    - Lako obučavanje<br/>
-                                    - Aktivni saputnici<br/>
-                                    - Svestrani psi<br/>
-                                </p>
+                                    ${udomljavanjeBlok.body.prednosti}
                                 </div>
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
-                                <button type="button" class="btn btn-primary">Udomi</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                                    <a href="kontakt.html" class="btn btn-primary">Udomi</a>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>  
                 </div>`;
     return html;
 }
@@ -194,45 +256,60 @@ if(udomljavanjeIspis){
     udomljavanjeIspis.innerHTML = udomljavanjeBlok;
 }
 
+//Dinamicki ispis DDL
+
+ let izborOpcija = [
+     {id: 1, name: "Želim da saznam više"},
+     {id: 2, name: "Želim da udomim ljubimca"},
+     {id: 3, name: "Želim da doniram azilu"}
+ ];
+
+ let opcije = "";
+
+ function napraviOpciju(o){
+    let html = `<option value="${o.id}">${o.name}</option>`;
+     return html;
+ }
+
+ for(let o of izborOpcija){
+     opcije+= napraviOpciju(o);
+ }
+
+let ddlOpcija = document.getElementById('dinamickaDDL');
+
+ if(ddlOpcija){
+     ddlOpcija.innerHTML += opcije;
+ }
 
 //Menjanje cover slika sa tajmerom
 
-let coverSlike = [
-    {
-        src: "assets/img/slide1.jpg",
-        alt: "Slider Slika 1"
-    },
-    {
-        src: "assets/img/slide2.jpg",
-        alt: "Slider Slika 2"
-    },
-    {
-        src: "assets/img/slide3.jpg",
-        alt: "Slider Slika 3"
+let coverSlikeSrc = ["assets/img/slide1.jpg", "assets/img/slide2.jpg", "assets/img/slide3.jpg"];
+let coverSlikeAlt = ["Slider Slika 1", "Slider Slika 2", "Slider Slika 3"];
+let i = 0;
+
+function promeniSliku(){
+
+    document.getElementById('coverSlika').src = coverSlikeSrc[i];
+    document.getElementById('coverSlika').alt = coverSlikeAlt[i];
+
+    if(i < coverSlikeSrc.length - 1){
+        i++;
     }
-];
+    else{
+        i = 0;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    setTimeout(promeniSliku, 3000); 
+}
 
 
 // ************************************************************
 
-var brojGresaka = 0;
-window.onload = function(){
-    let taster = document.querySelector("#bkSubmit");
-    taster.addEventListener("click", obradaForme);
-}
+//  var brojGresaka = 0;
+//  window.onload = function(){
+//      let taster = document.querySelector("#bkSubmit");
+//     //taster.addEventListener("click", obradaForme);
+//  }
 
 //Validacija forme
 
@@ -314,28 +391,4 @@ function proveraCekiranihElemenata(vrednostCekiranihElemenata, niz, poruka){
 }
 
 
-//Dinamicki ispis menija
 
-
-
-
-
-
-
-//Dinamicki ispis DDL
-
-let izborOpcija = [
-    {id: 1, name: "Želim da saznam više"},
-    {id: 2, name: "Želim da udomim životinju"},
-    {id: 3, name: "Želim da doniram azilu"}
-]
-
-let ddlOpcija = document.querySelector("#dinamickaDDL");
-
-let options = " ";
-
-for(let o of izborOpcija){
-    options+= `<option value="${o.id}">${o.name}</option>`;
-}
-
-ddlOpcija.innerHTML = options;
