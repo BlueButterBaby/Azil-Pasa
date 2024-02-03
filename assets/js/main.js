@@ -412,7 +412,7 @@ $('#bkTopPage').css({
 
 //jQuery waypoint plugin
 
-if(window.location.pathname == "/index.html" || window.location.pathname =="/Azil-Pasa/index.html"){
+if(window.location.pathname == "/index.html" || window.location.pathname =="/Azil-Pasa/index.html" || window.location.pathname =="/Azil-Pasa/"){
     var waypoint = new Waypoint({
         element: document.getElementById('o-nama'),
         handler: function() {
