@@ -1,14 +1,3 @@
-// Sta ces sve uraditi sa javascriptom za sajt:
-
-//Navigacioni meni ispisati dinamicki - DONE
-//Sa tajmerom menjati cover slike - DONE
-//Blok nasa porodica ispisati dinamicki - DONE
-//Blok udomljavanje ispisati dinamicki - DONE
-//DDL ispisati dinamicki u formi - DONE
-//Odraditi Regexe za formu
-//jQuery moras da uradis za nesto, nzm za sta iskreno
-
-
 //Dinamicki ispisi
 
 //Nav menu
@@ -275,10 +264,10 @@ if(udomljavanjeIspis){
      opcije+= napraviOpciju(o);
  }
 
-let ddlOpcija = document.getElementById('dinamickaDDL');
+var ddlElement = document.getElementById('dinamickaDDL');
 
- if(ddlOpcija){
-     ddlOpcija.innerHTML += opcije;
+ if(ddlElement){
+    ddlElement.innerHTML += opcije;
  }
 
 //Menjanje cover slika sa tajmerom
@@ -302,16 +291,16 @@ function promeniSliku(){
     setTimeout(promeniSliku, 3000); 
 }
 
-
-// ************************************************************
-
-//  var brojGresaka = 0;
-//  window.onload = function(){
-//      let taster = document.querySelector("#bkSubmit");
-//     //taster.addEventListener("click", obradaForme);
-//  }
-
 //Validacija forme
+
+var brojGresaka;
+
+if(document.querySelector("#bkForma") != null){
+    document.querySelector("#bkForma").addEventListener("submit", function(event){
+        event.preventDefault();
+        obradaForme();
+    });
+}
 
 function obradaForme(){
     let ime = document.querySelector("#bkIme");
@@ -319,21 +308,30 @@ function obradaForme(){
     let email = document.querySelector("#bkEmail");
     let phone = document.querySelector("#bkBrojtel");
     let polNiz = document.getElementsByName("bkRadioGroup");
-    let zelja = document.querySelector("#dinamcikaDDL");
     let textPolje = document.querySelector("#bkTextarea");
+    brojGresaka = 0;
 
     let regIme, regPrezime, regEmail, regPhone;
 
-    regIme = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,13}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,13}){1,3}$/;
-    regPrezime = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,16}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,16}){1,3}$/;
-    regEmail = /^([a-z] | [0-9]){3,20}@(gmail | yahoo | hotmail)\.com$/; //Nisam siguran za ovu validaciju
-    regPhone = /^([3816][0-9]{8,9} | [06][0-9]{8,9})$/;
-
-
+    regIme = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,13}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,13}){0,2}$/;
+    regPrezime = /^[A-ZŠĐŽČĆ][a-zšđčćž]{2,16}(\s[A-ZŠĐŽČĆ][a-zšđčćž]{2,16}){0,2}$/;
+    regEmail = /^[a-z]{3,20}(\d|\.)*(@gmail.com|@yahoo.com|@ict.edu.rs|@hotmail.com)$/;
+    regPhone = /^(\+3816[0-9]{5,6}|06[0-9]{8,9})$/;
+    regTextPolje = /^[A-ZŠĐŽČĆ]([a-zšđčćž]|\s|[A-ZŠĐŽČĆ]|\,|\.|\?|\!)+$/;
+   
     proveraIzraza(regIme, ime, "Ime nije u dobrom formatu, primer: Pera");
     proveraIzraza(regPrezime, prezime, "Prezime nije u dobrom formatu, primer: Perić");
     proveraIzraza(regEmail, email, "Email nije u dobrom formatu, primer: pera123@gmail.com");
-    proveraIzraza(regPhone, phone, "Broj telefona nije u dobrom formatu, početi sa 3816 ili 06");
+    proveraIzraza(regPhone, phone, "Broj telefona nije u dobrom formatu, početi sa +3816 ili 06");
+    proveraIzraza(regTextPolje, textPolje, "Koristili ste nedozvoljene karaktere.");
+
+    if(textPolje.value.length < 10){
+        textPolje.nextElementSibling.classList.remove("bkHideElement");
+        textPolje.nextElementSibling.textContent = "Poruka morati imati minimum 10 karaktera.";
+        textPolje.classList.add("bkRedBorder");
+        brojGresaka++
+        console.log(textPolje.nextElementSibling);
+    }
 
     let polVrednost = "";
 
@@ -341,26 +339,29 @@ function obradaForme(){
         if(polNiz[i].checked){
             polVrednost = polNiz[i].value;
             break;
+            
         }
     }
-
     proveraCekiranihElemenata(polVrednost, polNiz, "Morate izabrati pol.");
 
-    let zeljaVrednost = zelja.options[zelja.selectedIndex].value;
-
-    if(zeljaVrednost == "0"){
-        zelja.nextElementSibling.classList.remove("bkHideElement");
-        zelja.nextElementSibling.innerHTML = "Izaberite polje.";
-        zelja.classList.add("bkRedBorder");
-        brojGresaka++;
+    if(ddlElement.selectedIndex == 0){
+        ddlElement.nextElementSibling.classList.remove("bkHideElement");
+        ddlElement.nextElementSibling.textContent = "Morate odabrati nesto iz padajuće liste.";
+        ddlElement.classList.add("bkRedBorder");
+        brojGresaka++;     
     }
     else{
-        zelja.nextElementSibling.classList.add("bkHideElement");
-        zelja.nextElementSibling.innerHTML = "";
-        zelja.classList.remove("bkRedBorder");
+        ddlElement.nextElementSibling.classList.add("bkHideElement");
+        ddlElement.nextElementSibling.textContent = "";
+        ddlElement.classList.remove("bkRedBorder");
     }
-}
 
+    if (brojGresaka != 0){
+        return false;
+    }
+    
+    return true;
+}
 
 function proveraIzraza(regIzraz, vrednost, poruka){
     if(!regIzraz.test(vrednost.value)){
@@ -380,15 +381,66 @@ function proveraCekiranihElemenata(vrednostCekiranihElemenata, niz, poruka){
     if(vrednostCekiranihElemenata == ""){
         niz[0].parentElement.parentElement.nextElementSibling.classList.remove("bkHideElement");
         niz[0].parentElement.parentElement.nextElementSibling.innerHTML = poruka;
-        niz[0].parentElement.parentElement.classList.add("bkRedBorder");
+        niz[0].parentElement.parentElement.nextElementSibling.classList.add("bkRedBorder");
         brojGresaka++;
     }
     else{
         niz[0].parentElement.parentElement.nextElementSibling.classList.add("bkHideElement");
         niz[0].parentElement.parentElement.nextElementSibling.innerHTML = "";
-        niz[0].parentElement.parentElement.classList.remove("bkRedBorder");
+        niz[0].parentElement.parentElement.nextElementSibling.classList.remove("bkRedBorder");
     }
 }
 
+//jQuery
 
+$('#bkTopPage').click(function(){
+    window.scrollTo(top);
+});
+
+$('#bkTopPage').css({
+    'position': 'fixed',
+    'display': 'none',
+  'bottom': '65px',
+  'right': '17px',
+  'width': '50px',
+  'height': '50px',
+  'z-index': '2',
+  'font-size': '48px',
+  'color': '#0098D6',
+  'cursor': 'pointer'
+});
+
+//jQuery waypoint plugin
+
+if(window.location.pathname == "/index.html"){
+    var waypoint = new Waypoint({
+        element: document.getElementById('o-nama'),
+        handler: function() {
+            $('#bkTopPage').fadeIn();
+        }
+    });
+    
+    var waypoint2 = new Waypoint({
+        element: document.getElementById('carouselSection'),
+        handler: function() {
+            $('#bkTopPage').fadeOut()
+        }
+    });
+}
+
+if(window.location.pathname == "/pomoc.html"){
+    var waypoint3 = new Waypoint({
+        element: document.getElementById('volontiranje'),
+        handler: function() {
+            $('#bkTopPage').fadeIn();
+        }
+    });
+    
+    var waypoint4 = new Waypoint({
+        element: document.getElementById('udomljavanje'),
+        handler: function() {
+            $('#bkTopPage').fadeOut()
+        }
+    });
+}
 
