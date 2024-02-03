@@ -412,7 +412,7 @@ $('#bkTopPage').css({
 
 //jQuery waypoint plugin
 
-if(window.location.pathname == "/index.html"){
+if(window.location.pathname == "/index.html" || window.location.pathname =="/Azil-Pasa/index.html"){
     var waypoint = new Waypoint({
         element: document.getElementById('o-nama'),
         handler: function() {
@@ -423,12 +423,12 @@ if(window.location.pathname == "/index.html"){
     var waypoint2 = new Waypoint({
         element: document.getElementById('carouselSection'),
         handler: function() {
-            $('#bkTopPage').fadeOut()
+            $('#bkTopPage').fadeOut();
         }
     });
 }
 
-if(window.location.pathname == "/pomoc.html"){
+if(window.location.pathname == "/pomoc.html" || window.location.pathname =="/Azil-Pasa/pomoc.html"){
     var waypoint3 = new Waypoint({
         element: document.getElementById('volontiranje'),
         handler: function() {
@@ -439,7 +439,7 @@ if(window.location.pathname == "/pomoc.html"){
     var waypoint4 = new Waypoint({
         element: document.getElementById('udomljavanje'),
         handler: function() {
-            $('#bkTopPage').fadeOut()
+            $('#bkTopPage').fadeOut();
         }
     });
 }
